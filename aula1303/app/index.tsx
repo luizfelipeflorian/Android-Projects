@@ -1,4 +1,9 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
+import customButton from "../components/CustomButton";
+import footer from "../components/Footer";
+import header from "../components/Header";
+import profileImage from "../components/ProfileImage";
+import useRouteInfo from "../components/UserInfo";
 
 export default function Index() {
   return (
@@ -9,7 +14,11 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      {header()} {/* ajustar as props depois */}
+      {profileImage()}
+      {useRouteInfo()}
+      {customButton()}
+      {footer()}
     </View>
   );
 }
