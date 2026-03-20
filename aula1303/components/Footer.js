@@ -1,7 +1,12 @@
-import { Text } from "react-native";
+import React from "react";
+import { Text, View } from "react-native";
 
 /* fazer um slyles bonito dps */
 
-export default function footer() {
-  return <Text>Informação super importante</Text>; /* transformar em prop */
-}
+const Footer = (props) => (
+  <View>
+    <Text>{props.informacoes}</Text>
+  </View>
+);
+
+export default Footer;

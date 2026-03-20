@@ -2,8 +2,8 @@ import { Image } from "react-native";
 
 /* fazer um slyles bonito dps */
 
-export default function profileImage() {
-  return (
-    <Image source={require("../assets/images/favicon.png")} />
-  ); /* transformar em prop */
-}
+const ProfileImage = (props) => (
+  <Image source={props.source} style={{ width: 50, height: 50 }} />
+);
+
+export default ProfileImage;
