@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import Header from "../components/Header";
 
 export default function Index() {
@@ -10,7 +10,9 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Header></Header>
+      <ScrollView>
+        <Header></Header>
+      </ScrollView>
     </View>
   );
 }
