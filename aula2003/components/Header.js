@@ -7,9 +7,9 @@ const Header = () => {
       <View style={styles.HeaderTop}>
         <Image
           source={require("../assets/images/menus.png")}
-          style={styles.Icons}
+          style={[styles.Icons, styles.MenuIcon]}
         />
-        <Text style={styles.TextHeader}>Home</Text>
+        <Text style={styles.TextHeader}>HOME</Text>
       </View>
       <View style={styles.HeaderBottom}>
         <Image

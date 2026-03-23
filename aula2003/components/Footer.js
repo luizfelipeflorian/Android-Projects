@@ -20,7 +20,7 @@ const Footer = () => {
           <Text style={styles.TextPrimaryB}>ACTIVITIES</Text>
         </View>
         <TouchableHighlight onPress={() => {}} underlayColor="transparent">
-          <View>
+          <View style={styles.SeeAllButton}>
             <Text style={styles.SeeAllText}>SEE ALL</Text>
           </View>
         </TouchableHighlight>

@@ -17,7 +17,12 @@ const styles = StyleSheet.create({
   HeaderTop: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 8,
+    justifyContent: "center",
+    position: "relative",
+  },
+  MenuIcon: {
+    position: "absolute",
+    left: 0,
   },
   HeaderBottom: {
     flexDirection: "row",
@@ -35,7 +40,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 16,
     paddingVertical: 24,
-    gap: 8,
+    rowGap: 12,
+    columnGap: 8,
     backgroundColor: "#ffffff",
   },
   CardButtomContent: {
@@ -79,6 +85,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 8,
   },
+  FooterImageContainer: {
+    backgroundColor: "#ffffff",
+    borderRadius: 12,
+    padding: 8,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
   ImagesFooter: {
     height: 92,
     width: 92,
@@ -117,9 +136,16 @@ const styles = StyleSheet.create({
     color: "#b9931e",
   },
   SeeAllText: {
-    fontSize: 12,
-    color: "#3d3934",
-    fontWeight: "600",
+    fontSize: 11,
+    color: "#808080",
+    fontWeight: "500",
+    letterSpacing: 0.5,
+  },
+  SeeAllButton: {
+    backgroundColor: "#e0e0e0",
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 12,
   },
 });
 
