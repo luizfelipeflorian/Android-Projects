@@ -1,10 +1,10 @@
 import { View } from "react-native";
 import CardButtom from "../components/CardButtom";
+import styles from "../components/Styles";
 
 const Content = () => {
   return (
-    <View>
-      {/* Estilizar */}
+    <View style={styles.Content}>
       <CardButtom
         source={require("../assets/images/air.png")}
         name={"Attendance"}
