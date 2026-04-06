@@ -8,7 +8,6 @@ export default function Header() {
         <Text style={headerStyles.title}>Saudações,</Text>
         <Text style={[headerStyles.title, headerStyles.tenno]}>Tenno</Text>
       </View>
-      <View style={headerStyles.decorationLine}></View>
     </View>
   );
 }

@@ -26,7 +26,9 @@ export default function CategoryCard({
       >
         <Icon size={32} color={Colors.darkBackground} strokeWidth={2} />
       </View>
-      <Text style={categoryCardStyles.title}>{title}</Text>
+      <Text style={categoryCardStyles.title} numberOfLines={1}>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 }

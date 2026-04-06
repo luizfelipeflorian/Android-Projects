@@ -14,10 +14,11 @@ export default function SearchBar({
   return (
     <View style={searchBarStyles.container}>
       <TextInput
-        style={searchBarStyles.input}
+        style={[searchBarStyles.input, { outline: "none" } as any]}
         placeholder={placeholder}
         placeholderTextColor={Colors.mediumGray}
         onChangeText={onChangeText}
+        autoComplete="off"
       />
       <View style={searchBarStyles.searchIcon}>
         <Search size={20} color={Colors.mediumGray} />

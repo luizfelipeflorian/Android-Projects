@@ -1,13 +1,12 @@
-import { Globe, User } from "lucide-react-native";
-import { Text, TouchableOpacity, View } from "react-native";
-import { Colors, missionCardStyles, Opacity } from "./Style";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { missionCardStyles, Opacity } from "./Style";
 
 interface MissionCardProps {
   route: string;
   subtitle: string;
   faction: string;
-  ship: string;
-  profileImage?: string;
+  planetImage?: any;
+  profileImage?: any;
   reputation?: string;
   onPress?: () => void;
 }
@@ -16,7 +15,7 @@ export default function MissionCard({
   route,
   subtitle,
   faction,
-  ship,
+  planetImage,
   profileImage,
   reputation,
   onPress,
@@ -29,7 +28,13 @@ export default function MissionCard({
     >
       <View style={missionCardStyles.leftContainer}>
         <View style={missionCardStyles.planetImage}>
-          <Globe size={40} color={Colors.gold} strokeWidth={2} />
+          {planetImage && (
+            <Image
+              source={planetImage}
+              style={{ width: 40, height: 40, borderRadius: 20 }}
+              resizeMode="cover"
+            />
+          )}
         </View>
       </View>
 
@@ -37,12 +42,17 @@ export default function MissionCard({
         <Text style={missionCardStyles.route}>{route}</Text>
         <Text style={missionCardStyles.subtitle}>{subtitle}</Text>
         <Text style={missionCardStyles.details}>Fação: {faction}</Text>
-        <Text style={missionCardStyles.details}>Nave: {ship}</Text>
       </View>
 
       <View style={missionCardStyles.rightContainer}>
         <View style={missionCardStyles.profile}>
-          <User size={24} color={Colors.mediumGray} strokeWidth={2} />
+          {profileImage && (
+            <Image 
+              source={profileImage} 
+              style={{ width: 50, height: 50, borderRadius: 25 }}
+              resizeMode="cover"
+            />
+          )}
         </View>
         {reputation && (
           <Text style={missionCardStyles.reputation}>{reputation}</Text>

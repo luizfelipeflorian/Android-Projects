@@ -1,4 +1,4 @@
-import { ChevronRight, Zap } from "lucide-react-native";
+import { ChevronRight, TriangleAlert } from "lucide-react-native";
 import { Text, TouchableOpacity, View } from "react-native";
 import { bannerPromoStyles, Colors, Opacity } from "./Style";
 
@@ -20,7 +20,7 @@ export default function BannerPromo({
       activeOpacity={Opacity.medium}
     >
       <View style={bannerPromoStyles.alertIcon}>
-        <Zap size={24} color={Colors.gold} strokeWidth={2} fill={Colors.gold} />
+        <TriangleAlert size={24} color={Colors.gold} strokeWidth={2} />
       </View>
       <View style={bannerPromoStyles.textContainer}>
         <Text style={bannerPromoStyles.title}>{title}</Text>

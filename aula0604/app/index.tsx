@@ -8,7 +8,7 @@ import FooterMenu from "../components/FooterMenu";
 import Header from "../components/Header";
 import MissionCard from "../components/MissionCard";
 import SearchBar from "../components/SearchBar";
-import { Colors, indexStyles } from "../components/Style";
+import { Colors, headerStyles, indexStyles } from "../components/Style";
 
 export default function Index() {
   const [activeMenuItem, setActiveMenuItem] = useState("Orbiter");
@@ -22,25 +22,28 @@ export default function Index() {
 
   const missions = [
     {
-      route: "Orbiter → Cetus (Terra)",
-      subtitle: "Exploração",
+      route: "Coba (Terra)",
+      subtitle: "Defesa",
       faction: "Grineer",
-      ship: "Liset",
-      reputation: "+100 Rep",
+      reputation: "+3200 Rep",
+      planetImage: require("../assets/images/Terra.png"),
+      profileImage: require("../assets/images/Lotus-Profile.png"),
     },
     {
-      route: "Orbiter → Fortuna (Veneza)",
-      subtitle: "Coleta de Recursos",
+      route: "Copernicus (Lua)",
+      subtitle: "Captura",
       faction: "Corpus",
-      ship: "Dethcube",
-      reputation: "+75 Rep",
+      reputation: "+4500 Rep",
+      planetImage: require("../assets/images/Lua.png"),
+      profileImage: require("../assets/images/AladV-Profile.png"),
     },
     {
-      route: "Orbiter → Cameria (Platô)",
-      subtitle: "Combate",
+      route: "Phlegyas (Deimos)",
+      subtitle: "Extermínio",
       faction: "Infestados",
-      ship: "Liset",
-      reputation: "+150 Rep",
+      reputation: "+5700 Rep",
+      planetImage: require("../assets/images/Deimos.png"),
+      profileImage: require("../assets/images/Cephalon-Profile.png"),
     },
   ];
 
@@ -67,10 +70,12 @@ export default function Index() {
             ))}
           </View>
 
+          <View style={headerStyles.decorationLine}></View>
+
           {/* Banner Promocional */}
           <BannerPromo
-            title="Alerta Tático do Void!"
-            subtitle="Inicie Fendas do Void antes de amanhã e dobre seus Ducats"
+            title="Alerta Semanal"
+            subtitle="Inicie a caçada semanal de tesouros ayatan no Bazar da Maroo (Marte)"
           />
 
           {/* Missões */}
@@ -80,8 +85,9 @@ export default function Index() {
               route={mission.route}
               subtitle={mission.subtitle}
               faction={mission.faction}
-              ship={mission.ship}
               reputation={mission.reputation}
+              planetImage={mission.planetImage}
+              profileImage={mission.profileImage}
             />
           ))}
         </ScrollView>

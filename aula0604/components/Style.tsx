@@ -128,6 +128,7 @@ export const categoryCardStyles = StyleSheet.create({
     fontWeight: "bold",
     color: Colors.white,
     textAlign: "center",
+    textOverflow: "ellipsis",
   },
 });
 
@@ -146,8 +147,6 @@ export const bannerPromoStyles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     opacity: Opacity.high,
-    borderLeftWidth: 4,
-    borderLeftColor: Colors.cyan,
   },
   alertIcon: {
     marginRight: 12,
@@ -234,9 +233,9 @@ export const missionCardStyles = StyleSheet.create({
     marginLeft: 12,
   },
   profile: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 60,
+    height: 60,
+    borderRadius: 50,
     backgroundColor: Colors.background,
     borderWidth: 2,
     borderColor: Colors.gold,
