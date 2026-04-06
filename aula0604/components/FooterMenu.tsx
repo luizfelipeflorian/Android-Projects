@@ -1,9 +1,16 @@
+import {
+  BookOpen,
+  Compass,
+  LucideIcon,
+  Rocket,
+  ShoppingBag,
+} from "lucide-react-native";
 import { Text, TouchableOpacity, View } from "react-native";
-import { footerMenuStyles, Opacity } from "./Style";
+import { Colors, footerMenuStyles, Opacity } from "./Style";
 
 interface MenuItemProps {
   label: string;
-  icon: string;
+  icon: LucideIcon;
   active?: boolean;
   onPress?: () => void;
 }
@@ -13,7 +20,7 @@ interface FooterMenuProps {
   onPressItem?: (label: string) => void;
 }
 
-function MenuItem({ label, icon, active, onPress }: MenuItemProps) {
+function MenuItem({ label, icon: Icon, active, onPress }: MenuItemProps) {
   return (
     <TouchableOpacity
       style={[
@@ -23,12 +30,13 @@ function MenuItem({ label, icon, active, onPress }: MenuItemProps) {
       onPress={onPress}
       activeOpacity={Opacity.medium}
     >
-      <Text style={footerMenuStyles.icon}>{icon}</Text>
+      <Icon
+        size={24}
+        color={active ? Colors.gold : Colors.mediumGray}
+        strokeWidth={2}
+      />
       <Text
-        style={[
-          footerMenuStyles.label,
-          active && footerMenuStyles.labelActive,
-        ]}
+        style={[footerMenuStyles.label, active && footerMenuStyles.labelActive]}
       >
         {label}
       </Text>
@@ -41,10 +49,10 @@ export default function FooterMenu({
   onPressItem,
 }: FooterMenuProps) {
   const menuItems = [
-    { label: "Orbiter", icon: "🚀" },
-    { label: "Navegação", icon: "🧭" },
-    { label: "Mercado", icon: "🛍️" },
-    { label: "Códex", icon: "📖" },
+    { label: "Orbiter", icon: Rocket },
+    { label: "Navegação", icon: Compass },
+    { label: "Mercado", icon: ShoppingBag },
+    { label: "Códex", icon: BookOpen },
   ];
 
   return (

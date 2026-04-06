@@ -1,5 +1,6 @@
+import { Globe, User } from "lucide-react-native";
 import { Text, TouchableOpacity, View } from "react-native";
-import { missionCardStyles, Opacity } from "./Style";
+import { Colors, missionCardStyles, Opacity } from "./Style";
 
 interface MissionCardProps {
   route: string;
@@ -28,7 +29,7 @@ export default function MissionCard({
     >
       <View style={missionCardStyles.leftContainer}>
         <View style={missionCardStyles.planetImage}>
-          <Text style={missionCardStyles.planetIcon}>🌍</Text>
+          <Globe size={40} color={Colors.gold} strokeWidth={2} />
         </View>
       </View>
 
@@ -41,7 +42,7 @@ export default function MissionCard({
 
       <View style={missionCardStyles.rightContainer}>
         <View style={missionCardStyles.profile}>
-          <Text style={missionCardStyles.profileIcon}>👤</Text>
+          <User size={24} color={Colors.mediumGray} strokeWidth={2} />
         </View>
         {reputation && (
           <Text style={missionCardStyles.reputation}>{reputation}</Text>

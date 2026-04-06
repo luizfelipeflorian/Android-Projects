@@ -1,3 +1,4 @@
+import { Clock, Lock, Shield, Swords } from "lucide-react-native";
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -7,16 +8,16 @@ import FooterMenu from "../components/FooterMenu";
 import Header from "../components/Header";
 import MissionCard from "../components/MissionCard";
 import SearchBar from "../components/SearchBar";
-import { indexStyles, Colors } from "../components/Style";
+import { Colors, indexStyles } from "../components/Style";
 
 export default function Index() {
   const [activeMenuItem, setActiveMenuItem] = useState("Orbiter");
 
   const categories = [
-    { title: "Extermínio", icon: "⚔️", color: Colors.exterminio },
-    { title: "Sobrevivência", icon: "⏱️", color: Colors.sobrevivencia },
-    { title: "Defesa", icon: "🛡️", color: Colors.defesa },
-    { title: "Espionagem", icon: "🔒", color: Colors.espionagem },
+    { title: "Extermínio", icon: Swords, color: Colors.exterminio },
+    { title: "Sobrevivência", icon: Clock, color: Colors.sobrevivencia },
+    { title: "Defesa", icon: Shield, color: Colors.defesa },
+    { title: "Espionagem", icon: Lock, color: Colors.espionagem },
   ];
 
   const missions = [

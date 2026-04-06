@@ -1,16 +1,17 @@
+import { LucideIcon } from "lucide-react-native";
 import { Text, TouchableOpacity, View } from "react-native";
-import { categoryCardStyles, Opacity } from "./Style";
+import { categoryCardStyles, Colors, Opacity } from "./Style";
 
 interface CategoryCardProps {
   title: string;
-  icon: string;
+  icon: LucideIcon;
   color: string;
   onPress?: () => void;
 }
 
 export default function CategoryCard({
   title,
-  icon,
+  icon: Icon,
   color,
   onPress,
 }: CategoryCardProps) {
@@ -20,8 +21,10 @@ export default function CategoryCard({
       onPress={onPress}
       activeOpacity={Opacity.medium}
     >
-      <View style={[categoryCardStyles.iconContainer, { backgroundColor: color }]}>
-        <Text style={categoryCardStyles.icon}>{icon}</Text>
+      <View
+        style={[categoryCardStyles.iconContainer, { backgroundColor: color }]}
+      >
+        <Icon size={32} color={Colors.darkBackground} strokeWidth={2} />
       </View>
       <Text style={categoryCardStyles.title}>{title}</Text>
     </TouchableOpacity>

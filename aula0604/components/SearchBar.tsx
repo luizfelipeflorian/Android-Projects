@@ -1,5 +1,6 @@
-import { Text, TextInput, View } from "react-native";
-import { searchBarStyles, Colors } from "./Style";
+import { Search } from "lucide-react-native";
+import { TextInput, View } from "react-native";
+import { Colors, searchBarStyles } from "./Style";
 
 interface SearchBarProps {
   placeholder?: string;
@@ -19,7 +20,7 @@ export default function SearchBar({
         onChangeText={onChangeText}
       />
       <View style={searchBarStyles.searchIcon}>
-        <Text style={searchBarStyles.icon}>🔍</Text>
+        <Search size={20} color={Colors.mediumGray} />
       </View>
     </View>
   );
