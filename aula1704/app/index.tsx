@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Button, Text, TextInput, View } from "react-native";
 
 /* 
 Tela de Login (/)
@@ -18,7 +18,16 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <View>
+        <Text>Usuário</Text>
+        <TextInput placeholder="nome do usuário" />
+      </View>
+      <View>
+        <Text>Senha</Text>
+        <TextInput placeholder="senha" />
+      </View>
+
+      <Button title="Entrar" onPress={() => ("")}/>{/* definir depois redirecionar para a tela inicial (/lista).*/}
     </View>
   );
 }
