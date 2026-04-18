@@ -1,3 +1,4 @@
+import { useRouter } from "expo-router";
 import { Button, Text, TextInput, View } from "react-native";
 
 /* 
@@ -10,6 +11,7 @@ Botão "Entrar"
 Ação: Ao clicar no botão, redirecionar para a tela inicial (/lista).
 */
 export default function Index() {
+  const router = useRouter();
   return (
     <View
       style={{
@@ -27,7 +29,7 @@ export default function Index() {
         <TextInput placeholder="senha" />
       </View>
 
-      <Button title="Entrar" onPress={() => ("")}/>{/* definir depois redirecionar para a tela inicial (/lista).*/}
+      <Button title="Entrar" onPress={() => router.push("/lista")} />
     </View>
   );
 }
