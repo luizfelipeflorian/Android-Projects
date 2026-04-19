@@ -1,4 +1,4 @@
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter, Stack } from "expo-router";
 import { Button, Text, View } from "react-native";
 import { cursos, instrutores } from "../../data/dados.json";
 
@@ -30,17 +30,24 @@ export default function DetalheCurso() {
   }
 
   return (
-    <View
-      style={{
-        gap: 10,
-        padding: 20,
-      }}
-    >
+    <>
+      <Stack.Screen
+        options={{
+          title: curso.nome,
+        }}
+      />
+      <View
+        style={{
+          gap: 10,
+          padding: 20,
+        }}
+      >
       <Text style={{ fontSize: 20, fontWeight: "bold" }}>Nome do Curso: {curso.nome}</Text>
       <Button
         title={`Professor: ${instrutor.nome}`}
         onPress={() => router.push(`/instrutores/${instrutor.id}`)}
       />
-    </View>
+      </View>
+    </>
   );
 }
