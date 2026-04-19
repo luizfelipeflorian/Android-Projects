@@ -1,6 +1,5 @@
-import { useLocalSearchParams, useRouter, Stack } from "expo-router";
-import { Button, Text, View } from "react-native";
-import { cursos, instrutores } from "../../data/dados.json";
+import { DetalhesCurso } from "@/components/DetalhesCurso";
+import { useLocalSearchParams, useRouter } from "expo-router";
 
 /*
 Tela de Curso (/cursos/[id])
@@ -18,36 +17,16 @@ Nome do instrutor
 export default function DetalheCurso() {
   const router = useRouter();
   const { id } = useLocalSearchParams();
-  const curso = cursos.find((c) => c.id === id);
-  const instrutor = instrutores.find((i) => i.id === curso?.idInstrutor);
 
-  if (!curso || !instrutor) {
-    return (
-      <View style={{ padding: 20 }}>
-        <Text>Curso não encontrado</Text>
-      </View>
-    );
+  if (!id || typeof id !== "string") {
+    return null;
   }
 
+  const handleInstructorPress = (instructorId: string) => {
+    router.push(`/instrutores/${instructorId}`);
+  };
+
   return (
-    <>
-      <Stack.Screen
-        options={{
-          title: curso.nome,
-        }}
-      />
-      <View
-        style={{
-          gap: 10,
-          padding: 20,
-        }}
-      >
-      <Text style={{ fontSize: 20, fontWeight: "bold" }}>Nome do Curso: {curso.nome}</Text>
-      <Button
-        title={`Professor: ${instrutor.nome}`}
-        onPress={() => router.push(`/instrutores/${instrutor.id}`)}
-      />
-      </View>
-    </>
+    <DetalhesCurso courseId={id} onInstructorPress={handleInstructorPress} />
   );
 }
