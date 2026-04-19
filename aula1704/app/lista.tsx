@@ -30,7 +30,11 @@ export default function Lista() {
         Cursos Disponíveis
       </Text>
 
-      <View style={{ gap: 10 }}>
+      <View
+        style={{
+          gap: 10,
+        }}
+      >
         {cursos.map((curso) => (
           <Button
             key={curso.id}

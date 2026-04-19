@@ -17,7 +17,13 @@
     }
   ],
   "instrutores": [
-    { "id": "e4d909c290d0fb1ca068ffaddf22cbd0", "nome": "Ana Silva" },
-    { "id": "098f6bcd4621d373cade4e832627b4f6", "nome": "Carlos Souza" }
+    {
+      "id": "e4d909c290d0fb1ca068ffaddf22cbd0",
+      "nome": "Ana Silva"
+    },
+    {
+      "id": "098f6bcd4621d373cade4e832627b4f6",
+      "nome": "Carlos Souza"
+    }
   ]
 }
