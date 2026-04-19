@@ -1,4 +1,4 @@
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import { Button, Text, View } from "react-native";
 import { cursos, instrutores } from "../../data/dados.json";
 
@@ -29,32 +29,39 @@ export default function DetalheInstrutor() {
   }
 
   return (
-    <View
-      style={{
-        gap: 10,
-        padding: 20,
-      }}
-    >
-      <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-        Nome do Instrutor: {instrutor.nome}
-      </Text>
-
+    <>
+      <Stack.Screen
+        options={{
+          title: instrutor.nome,
+        }}
+      />
       <View
         style={{
           gap: 10,
+          padding: 20,
         }}
       >
-        <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-          Cursos ministrados:
+        <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+          Nome do Instrutor: {instrutor.nome}
         </Text>
-        {cursosMinistrados.map((curso) => (
-          <Button
-            key={curso.id}
-            title={curso.nome}
-            onPress={() => router.push(`/cursos/${curso.id}`)}
-          />
-        ))}
+
+        <View
+          style={{
+            gap: 10,
+          }}
+        >
+          <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+            Cursos ministrados:
+          </Text>
+          {cursosMinistrados.map((curso) => (
+            <Button
+              key={curso.id}
+              title={curso.nome}
+              onPress={() => router.push(`/cursos/${curso.id}`)}
+            />
+          ))}
+        </View>
       </View>
-    </View>
+    </>
   );
 }
