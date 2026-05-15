@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, View, Text, Image } from "react-native";
+import { StyleSheet, TextInput, View, Image } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 interface HeaderProps {
@@ -9,14 +9,16 @@ interface HeaderProps {
 export default function Header({ onSearch, searchValue }: HeaderProps) {
   return (
     <View style={styles.container}>
-      <View style={styles.logoContainer}>
+      <View style={styles.topBar}>
+        <MaterialIcons name="menu" size={28} color="#FFF" />
+
         <Image
           source={require("@/assets/images/logo.png")}
           style={styles.logo}
         />
-      </View>
 
-      <Text style={styles.title}>Pokédex</Text>
+        <MaterialIcons name="bookmark" size={28} color="#FFF" />
+      </View>
 
       <View style={styles.searchContainer}>
         <MaterialIcons name="search" size={20} color="#999" />
@@ -34,37 +36,28 @@ export default function Header({ onSearch, searchValue }: HeaderProps) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFF",
+    backgroundColor: "#EF5350",
     paddingHorizontal: 16,
-    paddingVertical: 20,
-    alignItems: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: "#F0F0F0",
+    paddingVertical: 12,
   },
-  logoContainer: {
-    marginBottom: 12,
+  topBar: {
+    flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 12,
   },
   logo: {
-    width: 120,
-    height: 60,
+    width: 100,
+    height: 50,
     resizeMode: "contain",
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#333",
-    marginBottom: 16,
-    letterSpacing: 1,
   },
   searchContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#F5F5F5",
+    backgroundColor: "#FFF",
     borderRadius: 8,
     paddingHorizontal: 12,
     height: 44,
-    width: "100%",
   },
   input: {
     flex: 1,
