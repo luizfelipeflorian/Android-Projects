@@ -7,11 +7,11 @@ interface PokemonData {
   pokemontypes: string[];
 }
 
-interface PessoaItemProps {
-  pessoa: PokemonData;
+interface PokemonItemProps {
+  pokemon: PokemonData;
 }
 
-export default function PessoaItem({ pessoa: pokemon }: PessoaItemProps) {
+export default function PokemonItem({ pokemon: pokemon }: PokemonItemProps) {
 
   return (
     <View
